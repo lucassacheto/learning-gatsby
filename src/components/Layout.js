@@ -1,20 +1,19 @@
 import React from "react";
 import '../styles/global.css';
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 function Layout ({children, data}){
     return (
         <div className="layout">
             <NavBar data={data} />
-            <div className="content">
+            <main className="content">
                 <main>
-                    <h1>
-                        {children}
-                    </h1>
+                    {children}
                 </main>
-            </div>
+            </main>
+            <Footer />
         </div>
-
     )
 }
 

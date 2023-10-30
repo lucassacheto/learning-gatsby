@@ -1,9 +1,118 @@
-body{
-    background-color: rgb(38, 37, 37);
-    color: white;
+
+/* reset */
+*{list-style: none;margin: 0;padding: 0;box-sizing: border-box;}
+html{scroll-behavior: smooth;}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34;
+  color:#fff;
 }
 
-ul,li{list-style: none;padding: 0;margin: 0;}
-ul{display: flex;width: 100%;max-width: 728px;}
-li{width: 100%;}
+a {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color:#fff;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
 
+.header{
+    display: flex;
+    background-color: #40454f;
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .header ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 40px 0;
+    max-width: 300px;
+  }
+  
+  .header button#btnNavControl{
+    display: none;
+  }
+  
+  main {
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  main p{
+    margin: 40px 0;
+  }
+
+  main .isiDrawer p{
+    margin: 4px 0;
+  }
+
+  footer{
+    height: 40px;
+    background-color: #40454f;
+    align-items: center;
+    display: flex;
+    padding: 0 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+    /* MOBILE */
+
+    @media (max-width: 675px) {
+    
+        .header ul{
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          margin: 58px 0;
+          right: 0;
+          max-width: unset;
+        }
+      
+        .header ul.open{display: block;}
+        .header ul.close{display: none;}
+    
+        .header ul li{background-color: #40454f;}
+        .header li:first-child{
+          background-color: #5d616a;
+        }
+        .header li {
+          padding: 20px;
+          width: 100%;
+        }
+    
+        .header button#btnNavControl{
+          display: block;
+          width: 100px;
+          height: 40px;
+          right: 0;
+          position: absolute;
+        }
+        .header button#btnNavControl.open::before{
+          content: 'a';
+        }
+        .header button#btnNavControl.close::before{
+          content: 'b';
+        }
+        .isiDrawer{
+          max-width: 340px;
+        }
+    
+      }
